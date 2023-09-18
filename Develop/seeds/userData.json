@@ -1,0 +1,27 @@
+[
+    {
+      "first_name": "Mary",
+      "last_name": "Joan",
+      "email": "mary.joan@gmail.com",
+      "password": "Password@123"
+    },
+    {
+      "first_name": "Leonardo",
+      "last_name": "DeCaprio",
+      "email": "leo.decaprio24@yahoo.com",
+      "password": "Password@123"
+    },
+    {
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "johnny_boy@aol.com",
+      "password": "Password@123"
+    },
+    {
+        "first_name": "Tina",
+        "last_name": "Tuner",
+        "email": "tina_turns@hotmail.com",
+        "password": "Password@123"
+      }
+  ]
+  
