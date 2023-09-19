@@ -1,19 +1,36 @@
-module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define("User", {
-        name: DataTypes.STRING,
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    });
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-    return User;
-};   
+class User extends Model {}
+
+User.init({
+    
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: true
+        }
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false
+    }
+}, 
+{
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'User'
+});
+
+
+module.exports = User;
