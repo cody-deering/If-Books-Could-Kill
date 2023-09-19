@@ -123,6 +123,8 @@ SO that I have confirmation that my books were purchased
 
 ## Wireframes
 
+**Note: Wireframes include future improvements visually and functionally as an ongoing process to improve the application.
+
 ![Login Page](https://github.com/cody-deering/If-Books-Could-Kill/assets/134161776/f8d55e84-ef5a-4cda-b638-388136bf664e)
 
 ![Create Account Modal Window](https://github.com/cody-deering/If-Books-Could-Kill/assets/134161776/8831fb0d-a85c-49fc-a7d4-01b55bab91e0)
