@@ -12,6 +12,29 @@
   rel="stylesheet" 
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
   crossorigin="anonymous">
+  <style>
+            body {
+            padding-top: 70px; 
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: rgb(0, 0, 0)
+        }
+            .title {
+                font-size: 24px;
+                margin-top: 20px;
+               
+            }
+            .navbar-brand,
+            .search-btn {
+                color: red;
+            }
+            .navbar-search{
+                position: absolute;
+                top: 0;
+                right: 380px; 
+                margin-top: 10px
+            }
+</style>
 
 </head>
 <body>
@@ -24,9 +47,17 @@
 
         <div class="navbar-search">
             <form class="form-inline">
-                <input class="form-control" type="text" placeholder="Search Books">
+                <input class="form-control" type="text" name="query" placeholder="Search Books">
                 <button class="btn btn-default" type="submit">Search</button>
             </form>
+        </div>
+         <button class="btn btn-info cart-button">
+            Cart <span class="badge">0</span>
+        </button>
+
+        
+        <div class="profile-window">
+            Welcome, {{{USER}}}
         </div>
     </div>
 </nav>
