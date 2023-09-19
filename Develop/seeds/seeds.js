@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const { User, Book } = require('../models');
 
 const userData = require('./userData.json');
-const bookData = require('./bookData.json');
+const booksData = require('./booksData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -12,7 +12,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const book of bookData) {
+  for (const book of booksData) {
     await Book.create({
       ...book,
       user_id: users[Math.floor(Math.random() * users.length)].id,
