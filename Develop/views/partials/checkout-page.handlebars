@@ -6,11 +6,28 @@
         body {
             text-align: center;
             font-family: Arial, sans-serif;
+            background-color: black;
         }
         .title {
             font-size: 24px;
             margin-top: 20px;
+            color: red;
         }
+        .navbar-brand {
+                color: red;
+            }
+        .navbar-search {
+                position: absolute;
+                top: 0;
+                right: 380px; 
+                margin-top: 10px
+            }
+        .your-cart,
+        .pricing {
+            color: red
+        }
+
+        
     </style>
 </head>
 <body>
@@ -19,6 +36,50 @@
     </div>
 
     <!-- Your checkout form and content go here -->
-
+    
+<div class="container">
+    <h2 class="your-cart">Your Cart</h2>
+    <div class="row">
+        <div class="col-md-6 d-flex justify-content-end">
+            <button class="btn btn-danger" id="continueShopping">Continue Shopping</button>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Select All <input type="checkbox" id="selectAll"> </th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" class="item-checkbox"></td>
+                <td><input type="number" class="item-quantity" value="1" min="1"></td>
+                <td><button class="btn btn-danger remove-item">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+        <div class="col-md-6 d-flex justify-content-start">
+            <button class="btn btn-danger" id="removeSelected">Remove Selected</button>
+        </div>
+        
+</div>
+    <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-6">
+                    <div class="pricing">
+                        <p>Subtotal: <span id="subtotal"></span></p>
+                        <p>Shipping: <span id="shipping"></span></p>
+                        <h4>Total: <span id="total"></span></h4>
+                        <button class="btn btn-danger" id="Checkout">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
+<script src="./js/shoppingcart.js"></script>
 </html>
+
