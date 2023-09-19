@@ -47,19 +47,23 @@
     <table class="table">
         <thead>
             <tr>
-                <th> Select All <input type="checkbox" id="selectAll"> </th>
+                <th>Select All<input type="checkbox" id="selectAll"></th>
                 <th>Item</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Action</th>
             </tr>
         </thead>
+        {{#each cartItems}}
         <tbody>
             <tr>
                 <td><input type="checkbox" class="item-checkbox"></td>
+                <td>{{this.Book.title}}</td>
+                <td>{{this.Book.price}}</td>
                 <td><input type="number" class="item-quantity" value="1" min="1"></td>
                 <td><button class="btn btn-danger remove-item">Remove</button></td>
             </tr>
+            {{/each}}
         </tbody>
     </table>
         <div class="col-md-6 d-flex justify-content-start">
@@ -71,15 +75,16 @@
             <div class="row justify-content-end">
                 <div class="col-md-6">
                     <div class="pricing">
-                        <p>Subtotal: <span id="subtotal"></span></p>
-                        <p>Shipping: <span id="shipping"></span></p>
-                        <h4>Total: <span id="total"></span></h4>
+                        <p>Subtotal: <span id="subtotal">{{cartSubtotal}}</span></p>
+                        <p>Shipping: <span id="shipping">{{cartShipping}}</span></p>
+                        <h4>Total: <span id="total">{{cartTotal}}</span></h4>
                         <button class="btn btn-danger" id="Checkout">Checkout</button>
                     </div>
                 </div>
             </div>
         </div>
+<script src="./models/shoppingcart.js"></script>
+<script src="./models/shoppingcart_book.js"></script>
 </body>
-<script src="./js/shoppingcart.js"></script>
 </html>
 

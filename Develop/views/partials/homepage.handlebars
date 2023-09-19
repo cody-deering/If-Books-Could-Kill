@@ -12,6 +12,29 @@
   rel="stylesheet" 
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
   crossorigin="anonymous">
+  <style>
+            body {
+            padding-top: 70px; 
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: rgb(0, 0, 0)
+        }
+            .title {
+                font-size: 24px;
+                margin-top: 20px;
+               
+            }
+            .navbar-brand,
+            .search-btn {
+                color: red;
+            }
+            .navbar-search{
+                position: absolute;
+                top: 0;
+                right: 380px; 
+                margin-top: 10px
+            }
+</style>
 
 </head>
 <body>
@@ -24,14 +47,52 @@
 
         <div class="navbar-search">
             <form class="form-inline">
-                <input class="form-control" type="text" placeholder="Search Books">
+                <input class="form-control" type="text" name="query" placeholder="Search Books">
                 <button class="btn btn-default" type="submit">Search</button>
             </form>
+        </div>
+         <button class="btn btn-info cart-button">
+            Cart <span class="badge">0</span>
+        </button>
+
+        
+        <div class="profile-window">
+            Welcome, {{{user}}}
         </div>
     </div>
 </nav>
 
 <!-- The rest of your homepage content goes here -->
+<div class="container">
+    <div class="genre-text row justify-content-center">
+        <div class="col">
+            <a href="/books?genre=Mystery" style="color: red;">Mystery/Crime Drama</a>
+        </div>
+        <div class="col">
+            <a href="/books?genre=Horror" style="color: red;">Horror</a>
+        </div>
+        <div class="col">
+            <a href="/books?genre=Thriller" style="color: red;">Thriller</a>
+        </div>
+        <div class="col">
+            <a href="/books?genre=True+Crime" style="color: red;">True Crime</a>
+        </div>
+    </div>
+</div>
+{{#each books}}
+<div class="book">
+    <h2>{{title}}</h2>
+    <p>Author: {{author}}</p>
+    <p>Description: {{description}}</p>
+    <p>Genres: {{genres}}</p>
+    <p>Average Rating: {{average_rating}}</p>
+    <p>Ratings Count: {{ratings_count}}</p>
 
+    <button class="btn btn-danger add-to-cart-button" data-book-id="{{id}}">Add to Cart</button>
+   
+</div>
+{{/each}}
+
+<script src="./models/books.js"></script>
 </body>
 </html>
