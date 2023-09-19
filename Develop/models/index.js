@@ -1,13 +1,29 @@
-'use strict';
+const Shoppingcart = require('./shoppingcart');
+const User = require('./user');
+const Book = require('./book');
 
-const fs = require('fs');
-const path = require('path');
-const Sequelize = require('sequelize');
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
+User.hasMany(Shoppingcart, {
+    foreignKey: 'user_id',
+});
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+User.BelongsToMany(Book, {
+    foreignKey: 'user_id',
+});
 
-module.exports = db;
+Book.belongTo(User, {
+    foreignKey: 'user_id'
+});
+
+Book.belongToMany(Shoppingcart, {
+    through: Shoopingcart_Book,
+    foreignKey: 'book_id',
+});
+
+Shoppingcart.BelongsToMany(Book, {
+    through: Shoopingcart_Book,
+    foreignKey: 'user_id',
+});
+
+Shoppingcart.belongTo(User, {
+    foreignKey: 'user_id'
+});
