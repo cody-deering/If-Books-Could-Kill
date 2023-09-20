@@ -12,7 +12,7 @@
   rel="stylesheet" 
   integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
   crossorigin="anonymous">
-    <style>
+  <style>
             body {
             padding-top: 70px; 
             text-align: center;
@@ -22,7 +22,7 @@
             .title {
                 font-size: 24px;
                 margin-top: 20px;
-               color: red;
+               
             }
             .navbar-brand,
             .search-btn {
@@ -57,12 +57,12 @@
 
         
         <div class="profile-window">
-            Welcome, {{{USER}}}
+            Welcome, {{{user}}}
         </div>
     </div>
 </nav>
 
-<!-- The rest of your genre page content goes here -->
+<!-- The rest of your homepage content goes here -->
 <div class="container">
     <div class="genre-text row justify-content-center">
         <div class="col">
@@ -92,6 +92,7 @@
    
 </div>
 {{/each}}
-<script src="./models/books.js"></script>
+
+<script src="../../models/books.js"></script>
 </body>
 </html>

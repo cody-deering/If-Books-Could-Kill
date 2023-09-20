@@ -1,12 +1,16 @@
-const router = require('express').Router();
+//const router = require('express').Router();
+const  express = require('express');
 const session = require('express-session');
-const routes = require('./Develop/controllers');
+const routes = require('./controllers');
+const path = require('path');
+const exphbs = require('express-handlebars');
 
 
-const sequelize = require('./Develop/config/connection');
+const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const app = router();
+//const app = router();
+const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
@@ -23,23 +27,21 @@ const sess = {
  })
 };
 
+console.log(sess);
+
 app.use(session(sess));
 
-const hbs = handlebars.create({ helpers });
+const hbs = exphbs.create();
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(router.json());
-app.use(router.urlencoded({ extended: true }));
-app.use(router.static('public'));
-app.use(router.static(path.resolve(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}))
+app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
-
-module.exports = router;
