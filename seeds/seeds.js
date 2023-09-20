@@ -12,6 +12,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+
   for (const book of booksData) {
     await Book.create({
       ...book,
