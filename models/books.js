@@ -22,7 +22,7 @@ Book.init({
   description: {
     type: DataTypes.TEXT,
   },
-  genres: {
+  genre: {
     type: DataTypes.STRING,
   },
   average_rating: {
