@@ -3,10 +3,31 @@
 <head>
     <title>Checkout...If you dare...</title>
     <style>
-        body {
+         body {
             text-align: center;
             font-family: Arial, sans-serif;
             background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 75vh;
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 75vh;
+        }
+        .container {
+            width: 80%;
+            text-align: center;
         }
         .title {
             font-size: 24px;
@@ -19,24 +40,32 @@
         .navbar-search {
                 position: absolute;
                 top: 0;
-                right: 380px; 
+                right: 380px;
                 margin-top: 10px
             }
         .your-cart,
         .pricing {
             color: red
         }
-
-        
+        .btn.btn-danger {
+            color: white;
+            background-color: red;
+        }
+        .table thead th {
+            color: red;
+        }
+        #removeSelected {
+            margin-left: auto;
+            margin-right: 340px;
+        }
     </style>
 </head>
 <body>
+    <div class="flex-container">
     <div class="title">
         Checkout...If you dare...
     </div>
-
     <!-- Your checkout form and content go here -->
-    
 <div class="container">
     <h2 class="your-cart">Your Cart</h2>
     <div class="row">
@@ -69,7 +98,6 @@
         <div class="col-md-6 d-flex justify-content-start">
             <button class="btn btn-danger" id="removeSelected">Remove Selected</button>
         </div>
-        
 </div>
     <div class="container">
             <div class="row justify-content-end">
@@ -83,8 +111,8 @@
                 </div>
             </div>
         </div>
+    </div>
 <script src="../../models/shoppingcart.js"></script>
 <script src="../../models/shoppingcart_book.js"></script>
 </body>
 </html>
-
