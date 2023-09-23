@@ -5,6 +5,14 @@ const Book = require('../models/books');
 const User = require('../models/user')
 const Auth = require('../utils/auth');
 
+router.get("/", function(req, res) {
+  if (req.user) {
+    res.redirect("/homepage");
+  } else {
+    res.render('login');
+  }
+});
+
 router.get('/homepage', async (req, res) => {
     try {
       // Get all projects and JOIN with user data
@@ -26,13 +34,6 @@ router.get('/homepage', async (req, res) => {
       });
     } catch (err) {
       res.status(500).json(err);
-    }
-  });
-router.get("/", function(req, res) {
-    if (req.user) {
-      res.redirect("/homepage");
-    } else {
-      res.render('login');
     }
   });
   
