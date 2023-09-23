@@ -120,6 +120,12 @@ SO that I have confirmation that my books were purchased
 
 ## Output
 
+<img width="1274" alt="Login Page" src="https://github.com/cody-deering/If-Books-Could-Kill/assets/134161776/1c498407-2ec8-46a5-a643-8693954f577c">
+
+<img width="1276" alt="Homepage" src="https://github.com/cody-deering/If-Books-Could-Kill/assets/134161776/91dbd856-a6e1-465c-94d3-d08dee28b525">
+
+<img width="1261" alt="Checkout Page" src="https://github.com/cody-deering/If-Books-Could-Kill/assets/134161776/8150eb33-1c27-4ae4-9749-facc0fc2b1a2">
+
 
 ## Wireframes
 
@@ -144,6 +150,8 @@ SO that I have confirmation that my books were purchased
 2. Coding Deering
 3. Jeremy Ethridge
 4. Elaine Luckey
+
+**Assistance from Edward Kim
 
 
 ## Technologies Used
