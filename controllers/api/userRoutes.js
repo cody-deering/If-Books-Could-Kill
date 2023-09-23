@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
         res.status(204).end();
       });
     } else {
-      res.status(404).end();
+      res.redirect('/login');
     }
   });
 
