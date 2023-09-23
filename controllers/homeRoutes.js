@@ -5,13 +5,6 @@ const Book = require('../models/books');
 const User = require('../models/user')
 const Auth = require('../utils/auth');
 
-router.get("/", function(req, res) {
-  if (req.user) {
-    res.redirect("/homepage");
-  } else {
-    res.render('login');
-  }
-});
 
 router.get('/homepage', async (req, res) => {
     try {
@@ -26,7 +19,7 @@ router.get('/homepage', async (req, res) => {
   
       // Serialize data so the template can read it
       const books = booksData.map((book) => book.get({ plain: true }));
-  
+      console.log(books);
       // Pass serialized data and session flag into template
       res.render('homepage', { 
         books, 
@@ -36,6 +29,15 @@ router.get('/homepage', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  router.get("/", function(req, res) {
+    if (req.user) {
+      res.redirect("/homepage");
+    } else {
+      res.render('login');
+    }
+  });
+
   
 router.get('/book/:id', async (req, res) => {
   try {
@@ -70,4 +72,14 @@ router.get('/homepage', Auth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/checkout', async (req, res) => {
+  try {
+    res.render('checkout-page');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+});
+
   module.exports = router;

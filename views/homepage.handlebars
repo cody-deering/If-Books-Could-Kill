@@ -96,7 +96,7 @@
                         <h5 class="card-title">{{title}}</h5>
                         <p class="card-text">Author: {{author}}</p>
                         <p class="card-text">Description: {{description}}</p>
-                        <p class="card-text">Genres: {{genres}}</p>
+                        <p class="card-text">Genre: {{genre}}</p>
                         <p class="card-text">Average Rating: {{average_rating}}</p>
                         <p class="card-text">Ratings Count: {{ratings_count}}</p>
                         <button class="btn btn-danger add-to-cart-button" data-book-id="{{id}}">Add to Cart</button>
@@ -107,7 +107,11 @@
         </div>
     </div>
 
-    <script src="../../models/books.js"></script>
+    <script>
+        document.querySelector('.cart-button').addEventListener('click', () => {
+            document.location.replace('/checkout')
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-Rks4IEzC6M9zPfSO2w0f8FLZR5s5+Mq8gEBJw7l3SxoJSmpeb+KFiXFnAg5ww5qb" crossorigin="anonymous"></script>
