@@ -6,7 +6,7 @@ const User = require('../models/user')
 const Auth = require('../utils/auth');
 
 
-router.get('/', async (req, res) => {
+router.get('/homepage', async (req, res) => {
     try {
       // Get all projects and JOIN with user data
       const booksData = await Book.findAll({
