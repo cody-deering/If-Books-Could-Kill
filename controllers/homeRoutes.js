@@ -1,10 +1,9 @@
 const router = require('express').Router();
 const Book = require('../models/books');
-const Shoppingcart = require('../models/shoppingcart');
-const Shoppingcart_book = require('../models/shoppingcart_book');
+//const Shoppingcart = require('../models/shoppingcart');
+//const Shoppingcart_book = require('../models/shoppingcart_book');
 const User = require('../models/user')
 const Auth = require('../utils/auth');
-
 
 router.get('/homepage', async (req, res) => {
     try {
@@ -29,7 +28,7 @@ router.get('/homepage', async (req, res) => {
       res.status(500).json(err);
     }
   });
-  router.get("/login", function(req, res) {
+router.get("/", function(req, res) {
     if (req.user) {
       res.redirect("/homepage");
     } else {
