@@ -18,7 +18,7 @@ If Books Could Kill is a Full Stack e-commerce web application where users regis
 - [How to Contribute](#how-to-contribute)
 
 ## Deployed Link
-https://if-books-could-kill-4b2d6d5c1cfb.herokuapp.com/
+https://powerful-ocean-14517-b9a996c2a9cb.herokuapp.com/
 
 ## Project Requirements
 1. Node.js and Express.js to create a RESTful API.
